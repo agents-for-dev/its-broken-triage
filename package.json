@@ -1,0 +1,14 @@
+{
+  "name": "@guildai/agent-its-broken-triage",
+  "version": "0.1.0",
+  "description": "Triages bug reports from #its-broken Slack channel, creates GitHub issues with findings",
+  "type": "module",
+  "main": "./agent.ts",
+  "dependencies": {
+    "@guildai/agents-sdk": "^0.2.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
