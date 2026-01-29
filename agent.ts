@@ -8,7 +8,7 @@
  * Flow:
  * 1. Extract channel ID from webhook payload
  * 2. Call Slack API to get channel name (cheap API call, no LLM)
- * 3. If channel is NOT #its-broken, return skip message
+ * 3. If channel is NOT a target channel, return silently
  * 4. If channel IS #its-broken, delegate to worker agent (LLM)
  */
 import {
