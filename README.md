@@ -21,16 +21,9 @@ When @mentioned in a Slack thread in #its-broken:
 
 ### 1. Import the Agent
 
-From the Guild CLI:
+Use the agent importer tool:
 
-```bash
-guild agent import agents-for-dev/its-broken-triage
-```
-
-Or use the web UI:
-1. Go to https://shared.guildai.dev/agents
-2. Click "Import Agent"
-3. Enter: `agents-for-dev/its-broken-triage`
+https://shared.guildai.dev/tools/agent-importer/its-broken-triage
 
 ### 2. Configure Slack Webhook
 

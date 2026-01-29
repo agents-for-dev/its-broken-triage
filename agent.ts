@@ -23,7 +23,8 @@ import {
 } from "@guildai/agents-sdk"
 import { z } from "zod"
 
-const TARGET_CHANNEL = "its-broken"
+// Accept both production and test channels
+const TARGET_CHANNELS = ["its-broken", "its-broken-test"]
 
 // Tools for the router: just what we need for channel checking + the worker agent
 const tools = {
@@ -42,7 +43,7 @@ const tools = {
       type: z.literal("text"),
       text: z.string(),
     }),
-    calls: "its-broken-triage-worker",
+    calls: "delaneyparker/its-broken-triage-worker",
   }),
 }
 type Tools = typeof tools
@@ -164,13 +165,13 @@ async function onToolResults(
       }
     }
 
-    // Check if this is the target channel
-    if (channelName !== TARGET_CHANNEL) {
+    // Check if this is a target channel - return silently if not
+    if (!TARGET_CHANNELS.includes(channelName)) {
       return {
         type: "output",
         output: {
           type: "text",
-          text: `Skipped: Message was in #${channelName}, not #${TARGET_CHANNEL}`,
+          text: "",
         },
       }
     }
