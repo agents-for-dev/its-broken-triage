@@ -23,7 +23,7 @@ import {
 } from "@guildai/agents-sdk"
 import { z } from "zod"
 
-// Accept both production and test channels
+// Target channels: production (#its-broken) and test (#its-broken-test)
 const TARGET_CHANNELS = ["its-broken", "its-broken-test"]
 
 // Tools for the router: just what we need for channel checking + the worker agent
