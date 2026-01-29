@@ -1,5 +1,5 @@
 /**
- * Its-Broken Triage Agent (Router)
+ * Its-Broken Triage Agent - Router
  *
  * This agent filters incoming Slack messages to ensure they're from #its-broken
  * BEFORE invoking any LLM. This saves costs by avoiding LLM calls for messages
